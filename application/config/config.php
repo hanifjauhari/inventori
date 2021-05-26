@@ -26,7 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 // $config['base_url'] = 'http://'. $_SERVER['HTTP_HOST'].'/req-ta-inventory-ji/';
 
-$config['base_url'] = 'http://localhost:8080/Cv-Dwi-Tunggal-Abadi/';
+$config['base_url'] = 'http://localhost:8080/inventori/';
 
 /*
 |--------------------------------------------------------------------------
