@@ -9,7 +9,7 @@
                 <div class="col-sm-6">
                     <h1>Data pegawai</h1>
                     <p>data dari pegawai CV Dwi Tunggal Abadi</p>
-
+                    <a href="<?php echo site_url('C_datapegawai/tambah') ?>" class="btn btn-primary">Tambah data pegawai</a>
 
                 </div>
                 <div class="col-sm-6">
@@ -35,6 +35,8 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Table data pegawai</h3>
+
+
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -78,6 +80,9 @@
 
                                             </td>
                                             <td>
+                                                <a href="<?php echo base_url('C_penjadwalan/index/' . $kolom['id_pegawai']) ?>" class="btn btn-default btn-sm">Atur Jadwal</a>
+                                                <a class="btn btn-danger btn-sm" href="<?php echo site_url('C_datapegawai/prosesdelete/' . $kolom['id_pegawai']) ?>" onclick="return confirm('apakah anda ingin menghapus data ini?')">hapus</a>
+                                                <a class="btn btn-warning btn-sm" href="<?php echo site_url('C_datapegawai/edit/' . $kolom['id_pegawai']) ?>">edit
                                                 </a>
                                             </td>
 

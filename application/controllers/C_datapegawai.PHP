@@ -33,6 +33,44 @@ class C_datapegawai extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    
+    public function tambah()
+    {
+
+        $data = array(
+            'title' => 'Halaman Data pegawai'
+        );
+
+        $this->load->view('template/header', $data);
+        $this->load->view('pegawai/datapegawai_tambah');
+        $this->load->view('template/footer');
+    }
+    function prosestambah()
+    {
+        $this->M_datapegawai->insertDataPegawai();
+    }
+    //fungsi proses hapus
+    function prosesdelete($id_pegawai)
+    {
+        $this->M_datapegawai->deleteDataPegawai($id_pegawai);
+    }
+
+    //fungsi menampilkan edit
+    function edit($id_pegawai)
+    {
+        $data = array(
+            'tittle' => 'halaman data pegawai',
+            //variabel data kategori
+            'data_pegawai' =>  $this->M_datapegawai->getDataPegawaiById_kategori($id_pegawai)
+        );
+        $this->load->view('template/header', $data);
+        $this->load->view('pegawai/datapegawai_edit');
+        $this->load->view('template/footer');
+    }
+
+    //fungsi proses edit selesai
+    function prosesupdate($id_pegawai)
+    {
+        $this->M_datapegawai->updateDataPegawai($id_pegawai);
+    }
 }
 /* End of file Controllername.php */
