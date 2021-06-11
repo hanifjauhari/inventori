@@ -152,8 +152,8 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #2c51f5;">
       <!-- Brand Logo -->
-      <a href="../../index3.html" class="brand-link" style="background-color: #2c51f5;">
-        <img src="<?php echo base_url() ?>assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <a href="<?php echo base_url('C_dashboarduser')?>" class="brand-link" style="background-color: #2c51f5;">
+        <img src="<?php echo base_url() ?>assets/web/images/cv1.jfif" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">CV DWI TUNGGAL </span>
       </a>
 
@@ -253,6 +253,27 @@
                   <i class="nav-icon far fa-id-card"></i>
                   <p>
                     Penjadwalan
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item has-treeview">
+                <a href="<?php echo site_url('C_bank/index') ?>" class="nav-link">
+                  <i class="nav-icon far fa-id-card"></i>
+                  <p>
+                    Bank
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item has-treeview">
+                <a href="<?php echo site_url('C_alamat/index') ?>" class="nav-link">
+                  <i class="nav-icon far fa-id-card"></i>
+                  <p>
+
+                    Alamat
+
+
                   </p>
                 </a>
               </li>

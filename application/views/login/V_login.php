@@ -199,7 +199,7 @@ footer a, footer a:link {
          
           <input type="password" name="password" class="form-control" placeholder="Password">
           
-          <button>
+          <button  type="submit">
       <!-- <i class="spinner"></i> -->
       <span class="state"><i class="fa fa-sign-in" aria-hidden="true"></i> Log in</span>
     </button>

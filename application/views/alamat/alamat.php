@@ -7,10 +7,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Data pegawai</h1>
-                    <p>data dari pegawai CV Dwi Tunggal Abadi</p>
+                    <h1>ALAMAT</h1>
+                    <p>Deskripsi menu . . . .</p>
 
-                    <a href="<?php echo site_url('C_datapegawai/tambah') ?>" class="btn btn-primary">Tambah data pegawai</a>
+                    <a href="<?php echo site_url('C_alamat/tambah') ?>" class="btn btn-primary">Tambah Alamat</a>
 
                 </div>
                 <div class="col-sm-6">
@@ -27,7 +27,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <div class="row justify-content-center">
+            <div class="row">
                 <div class="col">
                     <!-- Default box -->
 
@@ -35,7 +35,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Table data pegawai</h3>
+                            <h3 class="card-title">Table Alamat</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -50,38 +50,26 @@
                             <table id="active-datatable" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>nama pegawai</th>
-                                        <th>gender</th>
-                                        <th>telp</th>
-                                        <th>email</th>
-                                        <th>status</th>
-                                        <th>foto</th>
-                                        <th>opsi</th>
+                                        <th>Lokasi</th>
+                                        <th>Status</th>
+                                        <th>Opsi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($data_pegawai->result_array() as $kolom) :   ?>
+
+                                    <?php foreach ($alamat->result_array() as $kolom) : ?>
                                         <tr>
-                                            <td width="5%"><?php echo $kolom['nama_pegawai']   ?></td>
-                                            <td width="2%"><?php echo $kolom['gender'] ?></td>
-                                            <td width="2%"><?php echo $kolom['telp'] ?></td>
-                                            <td width="2%"><?php echo $kolom['email'] ?></td>
-                                            <td><?php echo $kolom['status'] ?></td>
-                                            <td width="5%">
+                                            <td><?php echo $kolom['lokasi'] ?></td>
+                                            <td width="15%"><?php echo $kolom['status'] ?></td>
+                                            <td width="30%">
+                                                <a class="btn btn-danger btn-xs" href="<?php echo site_url('C_alamat/prosesdelete/' . $kolom['id_alamat']) ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini ? ')">
 
-                                                <?php
+                                                    Hapus
+                                                </a>
 
-                                                $namaFoto = $kolom['foto'];
-                                                $alamatFoto = base_url('assets/dist/img/pegawai/' . $namaFoto);
-                                                ?>
+                                                <a class="btn btn-warning btn-xs" href="<?php echo site_url('C_alamat/edit/' . $kolom['id_alamat']) ?>">
 
-                                                <img src="<?php echo $alamatFoto ?>" alt="<?php echo $namaFoto ?>" style="width: 100px">
-
-                                            </td>
-                                            <td>
-                                                <a href="<?php echo base_url('C_penjadwalan/index/'. $kolom['id_pegawai']) ?>" class="btn btn-default btn-sm">Atur Jadwal</a>
-                                                <a class="btn btn-danger btn-sm" href="<?php echo site_url('C_datapegawai/prosesdelete/' . $kolom['id_pegawai']) ?>" onclick="return confirm('apakah anda ingin menghapus data ini?')">hapus</a>
-                                                <a class="btn btn-warning btn-sm" href="<?php echo site_url('C_datapegawai/edit/' . $kolom['id_pegawai']) ?>">edit
+                                                    Edit
                                                 </a>
                                             </td>
 
