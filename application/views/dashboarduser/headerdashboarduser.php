@@ -237,7 +237,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo site_url('login') ?>">Pelaporan</a>
+                            <a class="nav-link" href="<?php echo site_url('C_pelaporanclient') ?>">Pelaporan</a>
 
                         </li>
 
