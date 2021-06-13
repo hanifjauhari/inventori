@@ -103,6 +103,75 @@ class M_stockopname  extends CI_Model
         // kembali ke halaman utama
         redirect('C_stockopname/index');
     }
+
+
+
+
+
+
+    // fungsi delete opname
+    function deleteStockOpname( $id_opname ) {
+
+        // kondisi
+        $where = "WHERE id_opname='$id_opname'";
+
+        // query opname
+        $query_opname = "SELECT * FROM opname ".$where;
+
+        // penggabungan antara opname detail dengan barang 
+        $query_opname_detail = "SELECT opname_detail.*, barang.* FROM opname_detail 
+            JOIN barang ON barang.id_barang = opname_detail.id_barang ". $where;
+
+        // eksekusi query data opname
+        $getDataOpname = $this->db->query( $query_opname )->row_array();
+        $getDataOpname_detail = $this->db->query( $query_opname_detail );
+
+
+        // mengembalikan stok yang telah dikurangi
+        if ( $getDataOpname_detail->num_rows() > 0 ) {
+
+            foreach ( $getDataOpname_detail->result_array() AS $kolom ) {
+
+
+                $stok_barang_terkini = $kolom['qty'];
+                $stok_jumlah_opname  = $kolom['stok'];
+
+                // cek apakah opname masuk atau keluar
+                if ( $getDataOpname['tipe_opname'] == "masuk" ) {
+
+                    // stok masuk maka stok dipulihkan dengan cara dikurangi
+                    $pembaruan_stok = $stok_barang_terkini - $stok_jumlah_opname;
+                    
+                } else {
+
+                    // opname keluar maka stok dipulihkan dengan cara ditambah
+                    $pembaruan_stok = $stok_barang_terkini + $stok_jumlah_opname;
+                }
+                
+
+                // update
+                $dataPemulihanBarang = array(
+
+                    'qty'   => $pembaruan_stok
+                );
+
+                $this->db->where('id_barang', $kolom['id_barang']);
+                $this->db->update('barang', $dataPemulihanBarang);
+
+            }
+        }
+
+
+        // eksekusi delete :: child (opname_detail);
+        $this->db->where('id_opname', $id_opname)->delete('opname_detail');
+        
+        // eksekusi delete :: parent (opname);
+        $this->db->where('id_opname', $id_opname)->delete('opname');
+
+        // redirect
+        redirect('C_stockopname');
+
+    }
 }
     
     /* End of file M_kategoribarang.php */

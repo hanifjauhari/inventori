@@ -226,28 +226,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Electronics
-                            </a>
-                            <div class="dropdown-menu">
-                                <div class="agile_inner_drop_nav_info p-4">
-                                    <h5 class="mb-3">Barang Elektronik</h5>
-                                    <div class="row">
-                                        <div class="col-sm-6 multi-gd-img">
-                                            <ul class="multi-column-dropdown">
-                                                <li>
-                                                    <a href="<?php echo base_url('katalog/C_katalogcctv') ?>">CCTV</a>
-                                                </li>
-                                                <li>
-                                                    <a href="<?php echo base_url('katalog/C_kataloglainlain') ?>">PABX`</a>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                       
                         <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
                             <a class="nav-link" href="<?php echo base_url('C_aboutus') ?>">About Us</a>
                         </li>
@@ -262,12 +241,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo site_url('C_checkoutclient') ?>">checkout</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo site_url('C_paymentclient') ?>">Pembayaran</a>
-                        </li>
+                        
                     </ul>
                 </div>
             </nav>

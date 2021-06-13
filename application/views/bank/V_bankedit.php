@@ -41,24 +41,28 @@ $kolom = $bank->row_array();
                             <h4>Form Edit Alamat</h4>
 
                             <div class="form-group">
-
-                                <label>nama_bank</label>
-                                <input type="text" class="form-control" name="nama_bank" required="" value="<?php echo $kolom['nama_bank'] ?>">
-                                <small>Masukkan nama barang</small>
+                                <h5>Nama Bank</h5>
+                                <select class="form-control" name="nama_bank" required="" value="<?php echo $kolom['nama_bank'] ?>>
+                                    <option value="">==Other Banks==</option>
+                                    <option value=" BCA">BCA</option>
+                                    <option value="BNI">BNI</option>
+                                    <option value="MANDIRI">MANDIRI</option>
+                                    <option value="BRI">BRI</option>
+                                    <option value="CIMB NIAGA">CIMB NIAGA</option>
+                                </select>
+                                <small>Masukkan Nama Bank </small>
                             </div>
 
                             <div class="form-group">
-
-                                <label>cabang_bank</label>
+                                <h5>Cabang Bank</h5>
                                 <input type="text" class="form-control" name="cabang_bank" required="" value="<?php echo $kolom['cabang_bank'] ?>">
-                                <small>Masukkan nama barang</small>
+                                <small>Masukkan Cabang Bank</small>
                             </div>
 
                             <div class="form-group">
-
-                                <label>atas_nama</label>
+                                <h5>Atas Nama</h5>
                                 <input type="text" class="form-control" name="atas_nama" required="" value="<?php echo $kolom['atas_nama'] ?>">
-                                <small>Masukkan nama barang</small>
+                                <small>Masukkan nama </small>
                             </div>
 
                             <div class="form-group">

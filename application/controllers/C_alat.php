@@ -2,13 +2,14 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_bank extends CI_Controller
+class C_alat extends CI_Controller
 {
 
     function __construct()
     {
         parent::__construct();
 
+        // cek session
         if (empty($this->session->userdata('sess_id_profile'))) {
 
 
@@ -17,82 +18,71 @@ class C_bank extends CI_Controller
             redirect('login/index');
         }
 
-
-        // load model
-        $this->load->model('M_bank');
+        $this->load->model('M_alat');
     }
 
     public function index()
     {
-
         $data = array(
-            'title' => 'Halaman Data Bank   ',
-
-            'bank'  => $this->M_bank->getDataBank()
+            'title' => 'Halaman Data Alat',
+            'data_alat'  => $this->M_alat->getDataAlat()
         );
         // Template Header
         $this->load->view('template/header', $data);
         // Load halaman utama
-        $this->load->view('bank/V_bank');
+        $this->load->view('alat/alat');
         // Template Footer
         $this->load->view('template/footer');
     }
 
-
-    // fungsi baru untuk tambah 
     public function tambah()
     {
 
         $data = array(
-            'title' => 'Halaman Data Bank'
+            'title' => 'Halaman Data Alat',
+
         );
 
         $this->load->view('template/header', $data);
-        $this->load->view('bank/V_banktambah');
+        $this->load->view('alat/alat_tambah');
         $this->load->view('template/footer');
     }
 
-    // fungsi untuk menampilkan edit 
-    function edit($id_bank)
+    function edit($id_alat)
     {
 
         $data = array(
 
-            'title' => 'Halaman Data Kategori Barang',
+            'title' => 'Halaman Data Alat',
 
             // variable data kategori
-            'bank'  => $this->M_bank->getDataBankById_bank($id_bank)
+            'data_alat'  => $this->M_alat->getDataAlatById_alat($id_alat)
         );
 
         $this->load->view('template/header', $data);
-        $this->load->view('bank/V_bankedit');
+        $this->load->view('alat/alat_edit');
         $this->load->view('template/footer');
     }
-
-
-
-
-
-    // fungsi untuk proses tambah
     function prosestambah()
     {
 
-        $this->M_bank->insertBank();
+        $this->M_alat->insertDataAlat();
     }
 
 
-    // fungsi untuk proses hapus
-    function prosesdelete($id_bank)
+    function prosesdelete($id_alat)
     {
 
-        $this->M_bank->deleteBank($id_bank);
+        $this->M_alat->deleteDataAlat($id_alat);
     }
 
 
     // fungsi proses update
-    function prosesupdate($id_bank)
+    function prosesupdate($id_alat)
     {
 
-        $this->M_bank->updateBank($id_bank);
+        $this->M_alat->updateDataAlat($id_alat);
     }
 }
+
+/* End of file Controllername.php */

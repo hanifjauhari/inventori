@@ -7,10 +7,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Data Pelaporan Customer</h1>
+                    <h1>Data Alat</h1>
                     <p>Deskripsi menu . . . .</p>
 
-
+                    <a href="<?php echo site_url('C_alat/tambah') ?>" class="btn btn-primary">Tambah Data Alat</a>
 
                 </div>
                 <div class="col-sm-6">
@@ -26,7 +26,7 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="container-fluid" style="margin:center;">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col">
                     <!-- Default box -->
@@ -35,7 +35,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Table data pelaporan</h3>
+                            <h3 class="card-title">Table Data Alat</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -47,28 +47,40 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-striped">
+                            <table id="active-datatable" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>keterangan</th>
-                                        <th>tanggal</th>
+                                        <th>kode alat</th>
                                         <th>foto</th>
-                                        <th>status</th>
+                                        <th>Nama Alat</th>
+                                        <th>qty</th>
+                                        <th>opsi</>
+
 
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($pelaporan->result_array() as $kolom) :   ?>
+                                    <?php foreach ($data_alat->result_array() as $kolom) : ?>
                                         <tr>
+                                            <td><?php echo $kolom['kode_alat'] ?></td>
+                                            <td><img src="<?php echo base_url('assets/dist/img/barang/' . $kolom['foto']) ?>" alt="" width="30" hight="30"></img></td>
+                                            <td><?php echo $kolom['nama_alat'] ?></td>
+                                            <td><?php echo $kolom['qty'] ?></td>
+                                            <td width="30%">
 
-                                            <td><?php echo $kolom['keterangan'] ?></td>
-                                            <td><?php echo $kolom['tanggal'] ?></td>
-                                            <td><?php echo $kolom['foto'] ?></td>
-                                            <td><?php echo $kolom['status'] ?></td>
+                                                <a class="btn btn-danger btn-xs" href="<?php echo site_url('C_alat/prosesdelete/' . $kolom['id_alat']) ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini ? ')">
+
+                                                    Hapus alat
+                                                </a>
+
+                                                <a class="btn btn-warning btn-xs" href="<?php echo site_url('C_alat/edit/' . $kolom['id_alat']) ?>">
+
+                                                    Sunting
+                                                </a>
 
                                         </tr>
-                                    <?php endforeach; ?>
 
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

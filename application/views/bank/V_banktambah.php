@@ -34,25 +34,30 @@
 
                             <h4>Form Tambah Data Bank</h4>
 
-                            <div class="form-group">
-
-                                <label>Nama Bank</label>
-                                <input type="text" class="form-control" name="nama_bank" required="">
-                                <small>Masukkan Nama Bank</small>
+                            <div class="section_room_pay">
+                                <h5>Nama Bank</h5>
+                                <select class="form-control">
+                                    <option value="">==Other Banks==</option>
+                                    <option value="ALB-NA">BCA</option>
+                                    <option value="ADB-NA">BNI</option>
+                                    <option value="BBK-NA">MANDIRI</option>
+                                    <option value="BBC-NA">BRI</option>
+                                    <option value="BBR-NA">CIMB NIAGA</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
 
                                 <label>Cabang Bank</label>
                                 <input type="text" class="form-control" name="cabang_bank" required="">
-                                <small>Masukkan Nama Barang</small>
+                                <small>Masukkan Cabang Bank</small>
                             </div>
 
                             <div class="form-group">
 
                                 <label>Atas Nama</label>
                                 <input type="text" class="form-control" name="atas_nama" required="">
-                                <small>Masukkan Nama Barang</small>
+                                <small>Masukkan Nama </small>
                             </div>
 
 

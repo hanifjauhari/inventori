@@ -1,5 +1,4 @@
 <!-- Karena sudah ada template header footer, langsung copas kontennya -->
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -79,7 +78,7 @@
 
                                             </td>
                                             <td>
-                                                <a href="<?php echo base_url('C_penjadwalan/index/'. $kolom['id_pegawai']) ?>" class="btn btn-default btn-sm">Atur Jadwal</a>
+                                                <a href="<?php echo base_url('C_penjadwalan/index/' . $kolom['id_pegawai']) ?>" class="btn btn-default btn-sm">Atur Jadwal</a>
                                                 <a class="btn btn-danger btn-sm" href="<?php echo site_url('C_datapegawai/prosesdelete/' . $kolom['id_pegawai']) ?>" onclick="return confirm('apakah anda ingin menghapus data ini?')">hapus</a>
                                                 <a class="btn btn-warning btn-sm" href="<?php echo site_url('C_datapegawai/edit/' . $kolom['id_pegawai']) ?>">edit
                                                 </a>

@@ -36,10 +36,10 @@ class C_dashboarduser extends CI_Controller
         $this->load->view('dashboarduser/V_dashboarduser1', $data);
         $this->load->view('dashboarduser/footerdashboarduser', $data);
         // =======
-        $data = array(
-            'title' => 'Halaman Utama',
-            'data_barang'  => $this->M_databarang->getDataBarang()
-        );
+        // $data = array(
+        //     'title' => 'Halaman Utama',
+        //     'data_barang'  => $this->M_databarang->getDataBarang()
+       
     }
 }
     

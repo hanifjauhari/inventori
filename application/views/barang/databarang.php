@@ -65,7 +65,7 @@
                                     <?php foreach ($data_barang->result_array() as $kolom) : ?>
                                         <tr>
                                             <td><?php echo $kolom['kode_barang'] ?></td>
-                                            <td><img src="<?php echo base_url('assets/web/images/' . $kolom['foto']) ?>" alt="" width="30" hight="30" ></img></td>
+                                            <td><img src="<?php echo base_url('assets/dist/img/barang/' . $kolom['foto']) ?>" alt="" width="30" hight="30"></img></td>
                                             <td><?php echo $kolom['nama_barang'] ?></td>
                                             <td><?php echo number_format($kolom['harga']) ?></td>
                                             <td><?php echo $kolom['qty'] ?></td>

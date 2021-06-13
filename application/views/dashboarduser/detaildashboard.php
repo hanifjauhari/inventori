@@ -1,3 +1,7 @@
+<?php
+
+$kolom = $data_barang->row_array();
+?>
 <div class="container py-xl-4 py-lg-2">
     <!-- tittle heading -->
     <h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
@@ -12,17 +16,7 @@
                     <ul class="slides">
                         <li data-thumb="images/si1.jpg">
                             <div class="thumb-image">
-                                <img src=<?= base_url() . 'assets/web/images/si1.jpg' ?> data-imagezoom="true" class="img-fluid" alt="">
-                            </div>
-                        </li>
-                        <li data-thumb="images/si2.jpg">
-                            <div class="thumb-image">
-                                <img src="images/si2.jpg" data-imagezoom="true" class="img-fluid" alt="">
-                            </div>
-                        </li>
-                        <li data-thumb="images/si3.jpg">
-                            <div class="thumb-image">
-                                <img src="images/si3.jpg" data-imagezoom="true" class="img-fluid" alt="">
+                                <img src="<?php echo base_url('assets/dist/img/barang/' . $kolom['foto']) ?>" data-imagezoom="true" class="img-fluid" alt="">
                             </div>
                         </li>
                     </ul>
@@ -32,7 +26,7 @@
         </div>
 
         <div class="col-lg-7 single-right-left simpleCart_shelfItem">
-            <h3 class="mb-3">Samsung Galaxy J7 Prime (Gold, 16 GB) (3 GB RAM)</h3>
+            <h3 class="mb-3"><?php echo $kolom['nama_barang'] ?></h3>
             <p class="mb-3">
                 <span class="item_price">$200.00</span>
                 <del class="mx-2 font-weight-light">$280.00</del>
