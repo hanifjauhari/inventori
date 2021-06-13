@@ -222,11 +222,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto text-center mr-xl-5">
                         <li class="nav-item active mr-lg-1 mb-lg-0 mb-2">
-                            <a class="nav-link" href="<?php echo base_url('C_dashboarduser') ?>">Home
+                            <a class="nav-link" href="<?php echo base_url('C_dashboarduser')?>">Home
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        
+                       
                         <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
                             <a class="nav-link" href="<?php echo base_url('C_aboutus') ?>">About Us</a>
                         </li>
@@ -237,16 +237,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo site_url('C_pelaporanclient') ?>">Pelaporan</a>
+                            <a class="nav-link" href="<?php echo site_url('login') ?>">Pelaporan</a>
 
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo site_url('C_checkoutclient') ?>">checkout</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo site_url('C_paymentclient') ?>">Pembayaran</a>
-                        </li>
+                        
                     </ul>
                 </div>
             </nav>
