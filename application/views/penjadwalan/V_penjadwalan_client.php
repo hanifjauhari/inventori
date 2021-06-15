@@ -85,8 +85,8 @@
                                             <td><?php echo $rowTugas['status'] ?></td>
                                             <td>
                                             
-                                                <a href="" class="btn btn-xs btn-warning"><i class="fas fa-edit"></i>Sunting</a>
-                                                <a href="" class="btn btn-xs btn-outline-danger"><i class="fas fa-trash"></i>Hapus</a>
+                                                <a href="<?php echo base_url('C_penjadwalan/client_ubah/'.$rowTugas['id_penjadwalaninfo'].'/'.$rowTugas['id_penjadwalan_infoclient']) ?>" class="btn btn-xs btn-warning"><i class="fas fa-edit"></i>Sunting</a>
+                                                <a href="<?php echo base_url('C_penjadwalan/prosesclienthapus/'.$rowTugas['id_penjadwalaninfo'].'/'.$rowTugas['id_penjadwalan_infoclient']) ?>" onclick="return confirm('Apakah anda yakin ingin membatalkan jadwal ini ?')" class="btn btn-xs btn-outline-danger"><i class="fas fa-trash"></i>Hapus</a>
                                             </td>
                                         </tr>
 
@@ -122,16 +122,25 @@
                                 <?php 
                                 
                                 $nomor = 1;
-                                foreach ( $jadwal['pegawai'] AS $pegawai ) : ?>
-                                <tr>
+                                foreach ( $pegawai->result_array() AS $pg ) :
+                                
+                                $color = "";
+                                if ( $pg['pemetaan'] >= 3 ) {
+
+                                    $color = "#ffcdd2";
+                                }
+                                ?>
+                                <tr style="background-color: <?php echo $color ?>">
                                     <td><?php echo $nomor ?></td>
-                                    <td><?php echo $pegawai['nama_pegawai'] ?></td>
-                                    <td></td>
+                                    <td><?php echo $pg['nama_pegawai'] ?></td>
+                                    <td><?php echo $pg['pemetaan'] ?></td>
                                 </tr>
                                 <?php 
 
                                 $nomor++;
-                                endforeach; ?>
+                                endforeach; 
+                                
+                                ?>
                             </tbody>
                         </table>
                     </div>               

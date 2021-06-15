@@ -43,7 +43,7 @@ class M_login extends CI_Model
                     redirect('C_datapegawai');
                 } else if ($kolom['level'] == "client") {
 
-                    redirect('C_dashboarduser');
+                    redirect('C_pelaporanclient');
                 }
 
                 // password == 123 | password salah

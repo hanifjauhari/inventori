@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin</title>
+  <title>AdminLTE 3 | Projects</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,6 +22,17 @@
   <!-- jQuery -->
   <script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
 </head>
+
+<?php
+if (
+  $this->session->set_userdata('level') != "superadmin"
+
+) {
+  "Tidak terjangkau";
+}
+?>
+
+
 
 <body class="sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-collapse">
   <!-- Site wrapper -->
@@ -200,7 +211,7 @@
 
             <li class="nav-item has-treeview">
               <a href="<?php echo site_url('C_stockopname/index') ?>" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fas fa-fw fa-file-invoice"></i>
                 <p>
                   Stok Opname
                 </p>
@@ -219,7 +230,7 @@
             <?php if ($this->session->userdata('sess_level') != "admin") { ?>
               <li class="nav-item has-treeview">
                 <a href="<?php echo site_url('C_datapegawai/index') ?>" class="nav-link">
-                  <i class="nav-icon far fa-id-card"></i>
+                  <i class="nav-icon fas fa-fw fa-user"></i>
                   <p>
                     Data Pegawai
                   </p>
@@ -229,7 +240,7 @@
 
             <li class="nav-item has-treeview">
               <a href="<?php echo site_url('C_kodebarang/index') ?>" class="nav-link">
-                <i class="nav-icon far fa-id-card"></i>
+                <i class="nav-icon fas fa-fw fa-box"></i>
                 <p>
                   Kode Barang
                 </p>
@@ -258,35 +269,69 @@
               </li>
 
               <li class="nav-item has-treeview">
-                <a href="<?php echo site_url('C_alat/index') ?>" class="nav-link">
-                  <i class="nav-icon far fa-id-card"></i>
-                  <p>
-                    Alat
-                  </p>
-                </a>
-              </li>
-
-              <li class="nav-item has-treeview">
-                <a href="<?php echo site_url('C_bank/index') ?>" class="nav-link">
-                  <i class="nav-icon far fa-id-card"></i>
-                  <p>
-                    Bank
-                  </p>
-                </a>
-              </li>
-
-              <li class="nav-item has-treeview">
                 <a href="<?php echo site_url('C_alamat/index') ?>" class="nav-link">
-                  <i class="nav-icon far fa-id-card"></i>
+                  <i class="nav-icon fas fa-home"></i>
                   <p>
+
                     Alamat
+
+
                   </p>
                 </a>
               </li>
+
+              <li class="nav-item has-treeview">
+                <a href="<?php echo site_url('C_alat/index') ?>" class="nav-link">
+                  <i class="nav-icon fas fa-home"></i>
+                  <p>
+
+                    Alat'e kantor
+
+
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item has-treeview">
+                <a href="<?php echo site_url('C_distributor/index') ?>" class="nav-link">
+                  <i class="nav-icon fas fa-fw fa-people-carry"></i>
+                  <p>
+
+                    Distributor
+
+
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item has-treeview">
+                <a href="<?php echo site_url('C_faktur/index') ?>" class="nav-link">
+                  <i class="nav-icon fas fa-fw fa-people-carry"></i>
+                  <p>
+
+                    Faktur
+
+
+                  </p>
+                </a>
+              </li>
+
+
 
             <?php } ?>
+            <?php if ($this->session->userdata('sess_level') == "admin") { ?>
+              <li class="nav-item has-treeview">
+                <a href="<?php echo site_url('C_tugaspegawai/index') ?>" class="nav-link">
+                  <i class="nav-icon fas fa-fw fa-people-carry"></i>
+                  <p>
+
+                    Tugas Pegawai
 
 
+                  </p>
+                </a>
+              </li>
+            <?php } ?>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

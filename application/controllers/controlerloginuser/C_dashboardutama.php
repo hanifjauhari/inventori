@@ -31,9 +31,9 @@ class C_dashboardutama extends CI_Controller
             'title' => 'Halaman Utama',
             'data_barang'  => $this->M_databarang->getDataBarang()
         );
-        $this->load->view('viewloginuser/headeruser', $data);
+        $this->load->view('template_user/headeruser', $data);
         $this->load->view('viewloginuser/V_dashboardutama', $data);
-        $this->load->view('viewloginuser/footeruser', $data);
+        $this->load->view('template_user/footeruser', $data);
     }
 }
     

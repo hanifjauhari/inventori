@@ -10,13 +10,12 @@ class C_dashboarduser extends CI_Controller
     {
 
         parent::__construct();
-        if (empty($this->session->userdata('sess_id_profile'))) {
+        // if (empty($this->session->userdata('sess_id_profile'))) {
 
 
-            $this->session->set_flashdata('pesan', "harap login terlebih dahulu");
-            // arahkan 
-            redirect('C_registrasi/index');
-        }
+
+        //     redirect('C_registrasi/index');
+        // }
         $this->load->model('M_databarang');
 
         // cek session
@@ -39,7 +38,7 @@ class C_dashboarduser extends CI_Controller
         // $data = array(
         //     'title' => 'Halaman Utama',
         //     'data_barang'  => $this->M_databarang->getDataBarang()
-       
+
     }
 }
     

@@ -7,9 +7,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Tambah Pelanggan</h1>
+                    <h1>Tambah Data Distributor</h1>
                     <p></p>
-                    <a href="<?php echo site_url('C_pelanggan/tambah') ?>" class="btn btn-primary">Tambah Data Pelanggan</a>
+                    <a href="<?php echo site_url('C_distributor/tambah') ?>" class="btn btn-primary">Tambah Data Distributor</a>
 
                 </div>
                 <div class="col-sm-6">
@@ -34,7 +34,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Tabel Pelanggan</h3>
+                            <h3 class="card-title">Table Data Distributor</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -49,35 +49,24 @@
                             <table id="active-datatable" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>nama Pelanggan</th>
+                                        <th>Nama Distributor</th>
                                         <th>Email</th>
-                                        <th>NPWP</th>
                                         <th>Telpon</th>
-                                        <th>Situs Web</th>
-                                        <th>Nama Perusahaan</th>
-                                        <th>Alamat</th>
-                                        <th>Foto</th>
-                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($pelanggan->result_array() as $kolom) : ?>
+                                    <?php foreach ($distributor->result_array() as $kolom) : ?>
                                         <tr>
-                                            <td width="10%"><?php echo $kolom['nama_pelanggan'] ?></td>
-                                            <td width="10%"><?php echo $kolom['email'] ?></td>
-                                            <td width="10%"><?php echo $kolom['npwp'] ?></td>
-                                            <td width="10%"><?php echo $kolom['telpon'] ?></td>
-                                            <td width="10%"><?php echo $kolom['situs_web'] ?></td>
-                                            <td width="10%"><?php echo $kolom['nama_perusahaan'] ?></td>
-                                            <td width="10%"><?php echo $kolom['alamat'] ?></td>
-                                            <td><img src="<?php echo base_url('assets/dist/img/pelanggan/' . $kolom['foto']) ?>" alt="" width="30" hight="30"></img></td>
-                                            <td width="10%"><?php echo $kolom['status'] ?></td>
+                                            <td width="15%"><?php echo $kolom['nama_distributor'] ?></td>
+                                            <td width="15%"><?php echo $kolom['email'] ?></td>
+                                            <td width="15%"><?php echo $kolom['telpon'] ?></td>
+
                                             <td width="10%">
-                                                <a class="btn btn-danger btn-xs" href="<?php echo site_url('C_pelanggan/prosesdelete/' . $kolom['id_pelanggan']) ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini ? ')">
+                                                <a class="btn btn-danger btn-xs" href="<?php echo site_url('C_distributor/prosesdelete/' . $kolom['id_distributor']) ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini ? ')">
                                                     Hapus
                                                 </a>
-                                                <a class="btn btn-warning btn-xs" href="<?php echo site_url('C_pelanggan/edit/' . $kolom['id_pelanggan']) ?>">
+                                                <a class="btn btn-warning btn-xs" href="<?php echo site_url('C_distributor/edit/' . $kolom['id_distributor']) ?>">
                                                     Edit
                                                 </a>
                                             </td>

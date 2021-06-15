@@ -65,13 +65,11 @@ $kolom = $data_barang->row_array();
 
 
                             <div class="form-group">
-
                                 <label>Status</label>
                                 <!-- radio -->
                                 <div class="form-group">
                                     <div class="custom-control custom-radio">
                                         <input class="custom-control-input" type="radio" id="customRadio1" name="status_barang" value="disimpan" <?php if ($kolom['status_barang'] == "disimpan") echo "checked"; ?>>
-
                                         <label for="customRadio1" class="custom-control-label">Disimpan</label>
                                     </div>
                                     <div class="custom-control custom-radio">
