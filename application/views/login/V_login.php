@@ -188,12 +188,9 @@ footer a, footer a:link {
   <div class="wrapper">
       <form action="<?php echo base_url('index.php/login/prosesLogin') ?>" class="login"  method="post">
     <center><p class="title"></i> Log in</p><p class="title" style="margin-top:-50px;">CV. DWI TUNGGAL ABADI </p></center>
-    <?php if($this->session->flashdata('msg')){ ?>
-      <div class="alert alert-warning alert-dismissible">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <strong>Warning!</strong><br> <?php echo $this->session->flashdata('msg');?>
-     </div>
-    <?php } ?>
+    
+
+    <?php echo $this->session->flashdata('pesan') ?>
           <input type="text" name="username" class="form-control" placeholder="Username">
     <i class="fa fa-user-circle-o"></i>
          

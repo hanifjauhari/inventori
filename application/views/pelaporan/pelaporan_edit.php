@@ -12,15 +12,8 @@ $kolom = $pelaporan->row_array();
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Tambah data pelaporan</h1>
-                    <p>Deskripsi menu . . . .</p>
+                    <p></p>
 
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                        <li class="breadcrumb-item active">Fixed Navbar Layout</li>
-                    </ol>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -41,10 +34,17 @@ $kolom = $pelaporan->row_array();
 
 
                             <div class="form-group">
-                                <label>Keterangan</label>
-                                <input type="text" class="form-control" name="keterangan" required="" value="<?php echo $kolom['keterangan'] ?>">
-                                <small>Masukkan Keterangan</small>
+                                <label>Pelaporan</label>
+                                <input type="text" class="form-control" name="pelaporan" value="<?php echo $kolom['pelaporan'] ?>">
+                                <small>Masukkan Pelaporan</small>
                             </div>
+
+                            <div class="form-group">
+                                <label>keterangan</label>
+                                <input type="text" class="form-control" name="keterangan" required="" value="<?php echo $kolom['keterangan'] ?>">
+                                <small>Masukkan keterangan</small>
+                            </div>
+
 
                             <div class="form-group">
                                 <label>tanggal</label>
@@ -52,11 +52,11 @@ $kolom = $pelaporan->row_array();
                                 <small>Masukkan tanggal</small>
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>foto</label>
                                 <input type="file" class="form-control" name="foto" required="" value="<?php echo $kolom['foto'] ?>">
                                 <small>Masukkan foto</small>
-                            </div>
+                            </div> -->
 
 
                             <div class="form-group">
@@ -73,36 +73,36 @@ $kolom = $pelaporan->row_array();
                                         <label for="customRadio2" class="custom-control-label">Proses</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input class="custom-control-input" type="radio" id="customRadio2" name="status" value="selesai" <?php if ($kolom['status'] == "selesai") echo "checked"; ?>>
-                                        <label for="customRadio2" class="custom-control-label">Selesai</label>
+                                        <input class="custom-control-input" type="radio" id="customRadio3" name="status" value="selesai" <?php if ($kolom['status'] == "selesai") echo "checked"; ?>>
+                                        <label for="customRadio3" class="custom-control-label">Selesai</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input class="custom-control-input" type="radio" id="customRadio2" name="status" value="tolak" <?php if ($kolom['status'] == "tolak") echo "checked"; ?>>
-                                        <label for="customRadio2" class="custom-control-label">Tolak</label>
+                                        <input class="custom-control-input" type="radio" id="customRadio4" name="status" value="tolak" <?php if ($kolom['status'] == "tolak") echo "checked"; ?>>
+                                        <label for="customRadio4" class="custom-control-label">Tolak</label>
                                     </div>
                                 </div>
                             </div>
 
 
-                            
 
 
 
-                        <div class="form-group">
 
-                            <button type="submit" class="btn btn-primary">Simpan data Pelaporan</button>
+                            <div class="form-group">
+
+                                <button type="submit" class="btn btn-primary">Simpan data Pelaporan</button>
+
+                            </div>
 
                         </div>
-
+                    </form>
                 </div>
-                </form>
+
+
             </div>
 
-
         </div>
-
-</div>
-</section>
-<!-- /.content -->
+    </section>
+    <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->

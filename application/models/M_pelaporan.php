@@ -20,7 +20,8 @@ class M_pelaporan extends CI_Model
         return $hasil;
     }
 
-    function getPelaporanById_pelaporan( $id_pelaporan ) {
+    function getPelaporanById_pelaporan($id_pelaporan)
+    {
 
 
 
@@ -28,8 +29,6 @@ class M_pelaporan extends CI_Model
         $hasil = $this->db->query($query);
 
         return $hasil;
-        
-        
     }
 
 
@@ -38,12 +37,13 @@ class M_pelaporan extends CI_Model
 
     // fungsi proses tambah 
 
-    function deletePelaporan( $id_pelaporan ) {
+    function deletePelaporan($id_pelaporan)
+    {
 
 
         // Menghapus kategori barang yang memiliki id = variabel x
         // $this->db->where(    bagian A , bagian B    );
-        
+
         /**
          * 
          *  @param bagianA = merupakan nama kolom yang ada di tabel. ex id_kategori, nama, status
@@ -51,7 +51,7 @@ class M_pelaporan extends CI_Model
          */
 
         // eksekusi query 
-        
+
         $this->db->where('id_pelaporan', $id_pelaporan);
         $this->db->delete('pelaporan');
 
@@ -60,7 +60,7 @@ class M_pelaporan extends CI_Model
         $htmlPesan = '<div class="alert alert-success alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                             <p style="margin: 0px"><i class="icon fas fa-check"></i> Pemberitahuan !</p>
-                            <small>Data berhasil dihapus pada '.date('d F Y H.i A').'.</small>
+                            <small>Data berhasil dihapus pada ' . date('d F Y H.i A') . '.</small>
                         </div>';
         $this->session->set_flashdata('pesan', $htmlPesan);
 
@@ -69,16 +69,17 @@ class M_pelaporan extends CI_Model
         redirect('C_pelaporan/index');
     }
 
-    function updatePelaporan( $id_pelaporan ) {
+    function updatePelaporan($id_pelaporan)
+    {
 
-        
+
 
         $nilaiTabelPelaporan = array(
 
-            'keterangan'    => $this->input->post('keterangan'),
-            'tanggal'       => $this->input->post('tanggal'),
-            'foto'          => $this->input->post('foto'),
-            'status'        => $this->input->post('status'),
+            'pelaporan'  => $this->input->post('pelaporan'),
+            'keterangan' => $this->input->post('keterangan'),
+            'tanggal'  => $this->input->post('tanggal'),
+            'status'  => $this->input->post('status')
         );
 
 
@@ -87,18 +88,17 @@ class M_pelaporan extends CI_Model
         $this->db->update('pelaporan', $nilaiTabelPelaporan);
 
 
-         // pesan 
+        // pesan 
         $htmlPesan = '<div class="alert alert-success alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                             <p style="margin: 0px"><i class="icon fas fa-check"></i> Pemberitahuan !</p>
-                            <small>Data berhasil diperbarui pada '.date('d F Y H.i A').'.</small>
+                            <small>Data berhasil diperbarui pada ' . date('d F Y H.i A') . '.</small>
                         </div>';
         $this->session->set_flashdata('pesan', $htmlPesan);
 
 
         // kembali 
         redirect('C_pelaporan/index');
-
     }
 }
     

@@ -8,17 +8,10 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>KATEGORI BARANG</h1>
-                    <p>Deskripsi menu . . . .</p>
+                    <p></p>
 
                     <a href="<?php echo site_url('C_kategoribarang/tambah') ?>" class="btn btn-primary">Tambah Kategori</a>
 
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                        <li class="breadcrumb-item active">Fixed Navbar Layout</li>
-                    </ol>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -57,30 +50,25 @@
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ( $kategori_barang->result_array() AS $kolom ) : ?>
-                                    <tr>
-                                        <td><?php echo $kolom['jenis_barang'] ?></td>
-                                        <td width="15%"><?php echo $kolom['status'] ?></td>
-                                        <td width="30%">
-                                            <a 
-                                                class="btn btn-danger btn-xs"
-                                                href="<?php echo site_url('C_kategoribarang/prosesdelete/'. $kolom['id_kategori']) ?>"
-                                                onclick="return confirm('Apakah anda yakin ingin menghapus data ini ? ')" >
-                                                
-                                                Hapus Kategori
-                                            </a>
+                                    <?php foreach ($kategori_barang->result_array() as $kolom) : ?>
+                                        <tr>
+                                            <td><?php echo $kolom['jenis_barang'] ?></td>
+                                            <td width="15%"><?php echo $kolom['status'] ?></td>
+                                            <td width="30%">
+                                                <a class="btn btn-danger btn-xs" href="<?php echo site_url('C_kategoribarang/prosesdelete/' . $kolom['id_kategori']) ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini ? ')">
 
-                                            <a 
-                                                class="btn btn-warning btn-xs"
-                                                href="<?php echo site_url('C_kategoribarang/edit/'. $kolom['id_kategori']) ?>">
+                                                    Hapus Kategori
+                                                </a>
 
-                                                Sunting
-                                            </a>
-                                        </td>
-                                        
-                                    </tr>
+                                                <a class="btn btn-warning btn-xs" href="<?php echo site_url('C_kategoribarang/edit/' . $kolom['id_kategori']) ?>">
+
+                                                    Sunting
+                                                </a>
+                                            </td>
+
+                                        </tr>
                                     <?php endforeach; ?>
-                                    
+
                                 </tbody>
                             </table>
                         </div>

@@ -11,7 +11,7 @@ class M_contactus extends CI_Model
 
         parent::__construct();
     }
-
+    
 
 
 

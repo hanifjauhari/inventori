@@ -8,17 +8,8 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Data Pelaporan Customer</h1>
-                    <p>Deskripsi menu . . . .</p>
+                    <p></p>
 
-
-
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                        <li class="breadcrumb-item active">Fixed Navbar Layout</li>
-                    </ol>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -50,21 +41,28 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>keterangan</th>
+                                        <th>Pelaporan</th>
+                                        <th>Keterangan</th>
                                         <th>tanggal</th>
-                                        <th>foto</th>
                                         <th>status</th>
+                                        <th>opsi</th>
+
 
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($pelaporan->result_array() as $kolom) :   ?>
                                         <tr>
-
+                                            <th><?php echo $kolom['pelaporan'] ?></th>
                                             <td><?php echo $kolom['keterangan'] ?></td>
                                             <td><?php echo $kolom['tanggal'] ?></td>
-                                            <td><?php echo $kolom['foto'] ?></td>
+                                            <!-- <td><img src="<?php echo base_url('assets/dist/img/fotoperbaikan/' . $kolom['foto']) ?>" alt="" width="30" hight="30"></img></td> -->
                                             <td><?php echo $kolom['status'] ?></td>
+
+                                            <th>
+
+                                                <a class="btn btn-warning btn-sm" href="<?php echo site_url('C_pelaporan/edit/' . $kolom['id_pelaporan']) ?>">edit
+                                            </th>
 
                                         </tr>
                                     <?php endforeach; ?>

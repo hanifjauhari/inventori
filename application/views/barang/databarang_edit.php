@@ -13,16 +13,10 @@ $kolom = $data_barang->row_array();
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Sunting Kategori</h1>
-                    <p>Deskripsi menu . . . .</p>
+                    <p></p>
 
                 </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                        <li class="breadcrumb-item active">Fixed Navbar Layout</li>
-                    </ol>
-                </div>
+                
             </div>
         </div><!-- /.container-fluid -->
     </section>

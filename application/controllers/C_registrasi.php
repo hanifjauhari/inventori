@@ -39,12 +39,13 @@ class C_registrasi extends CI_Controller
     public function index()
     {
         $data = array('title' => 'Halaman Utama');
-        // @TODO 1 : Halaman Login
-        $this->load->view('dashboarduser/headerdashboarduser', $data);
+        // // @TODO 1 : Halaman Login
+        // $this->load->view('dashboarduser/headerdashboarduser', $data);
         $this->load->view('login/registrasi',$data);
     }
     function prosestambah()
-    {
+    {   
+
         $this->M_registrasi->prosesRegistrasi();
     }
 }

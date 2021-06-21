@@ -8,16 +8,10 @@
                 <div class="col-sm-6">
                     <h1>Data pegawai</h1>
                     <p>data dari pegawai CV Dwi Tunggal Abadi</p>
+                    <p></p>
 
                     <a href="<?php echo site_url('C_datapegawai/tambah') ?>" class="btn btn-primary">Tambah data pegawai</a>
 
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                        <li class="breadcrumb-item active">Fixed Navbar Layout</li>
-                    </ol>
                 </div>
             </div>
         </div><!-- /.container-fluid -->

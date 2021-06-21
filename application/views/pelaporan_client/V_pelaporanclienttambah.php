@@ -8,7 +8,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Pelaporan Client</h1>
-                    <p>Deskripsi menu . . . .</p>
+                    <p></p>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -29,9 +29,10 @@
 
                             <div class="form-group">
 
-                                <label>Keterangan</label>
-                                <input type="text" class="form-control" name="keterangan" required="">
+                                <label>pelaporan</label>
+                                <input type="text" class="form-control" name="pelaporan" required="">
                             </div>
+
 
                             <div class="form-group">
                                 <label> tanggal</label>

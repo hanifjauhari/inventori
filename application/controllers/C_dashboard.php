@@ -17,6 +17,10 @@
                 // arahkan 
                 redirect('login/index');
             }
+
+
+            $this->load->model('M_dashboard');
+            $this->load->model('M_penjadwalan');
         }
 
 
@@ -24,18 +28,15 @@
             
             $data = array(
 
-                'title' => 'Halaman Utama'
+                'title' => 'Halaman Utama',
+                'jumlah'=> $this->M_dashboard->getJumlah(),
+
+                // 'penjadwalan'   => $this->M_penjadwalan->model_getdatapenjadwalan()
+                'penjadwalan'   => $this->M_penjadwalan->getAllJadwal()
             );
 
-            // Template Header
-            // $this->load->view('template/header', $data);
-            // // Load halaman utama
-            // $this->load->view('barang/kategoribarang');
-            // // Template Footer
-            // $this->load->view('template/footer');
-
             $this->load->view('template/header');
-            $this->load->view('dashboard/V_dashboard');
+            $this->load->view('dashboard/V_dashboard', $data);
             $this->load->view('template/footer');
         }
     

@@ -205,8 +205,18 @@ class M_datapegawai extends CI_Model
         $this->session->set_flashdata('pesan', $htmlPesan);
 
 
-        //kebali ke menu awal setelah hapus
-        redirect('C_datapegawai/index');
+
+        $level = $this->session->userdata('sess_level');
+        if ( $level == "superadmin" ) {
+
+            redirect('C_datapegawai/index');
+            
+        } else {
+
+            redirect('controlerloginuser/C_setting/editakun');
+        }
+
+        
     }
 }
     

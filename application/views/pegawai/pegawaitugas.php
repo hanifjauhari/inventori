@@ -8,16 +8,9 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Tugas Pegawai</h1>
-                    <p>Tugas Pegawai</p>
+                    <p></p>
 
 
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                        <li class="breadcrumb-item active">Fixed Navbar Layout</li>
-                    </ol>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -33,6 +26,38 @@
                     <?php echo $this->session->flashdata('pesan') ?>
 
                         <div class="card-body">
+
+                            <form action="" method="GET">
+
+                            <?php
+                            
+                                $filter = $this->input->get('status');
+                            ?>
+                            <div class="row">
+                            
+                                <div class="col-md-4">
+                                
+                                    
+                                    <select name="status" class="form-control" id="">
+                                        <option value="all" <?php echo ($filter == "all") ? 'selected="selected"' : ''; ?>>Keseluruhan</option>
+                                        <option value="selesai" <?php echo ($filter == "selesai") ? 'selected="selected"' : '' ?>>Selesai</option>
+                                        <option value="proses" <?php echo ($filter == "proses") ? 'selected="selected"' : '' ?>>Proses</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary">Tampilkan</button>
+                                </div>
+
+                                <div class="col-md-6" style="text-align: right">
+                                    <a href="<?php echo base_url('C_tugaspegawai/exportjadwalPDF?status='. $filter) ?>" class="btn btn-outline-danger"><i class="fas fa-pdf"></i> Cetak PDF</a>
+                                </div>  
+                                
+                            </div>
+                            </form>
+
+
+                            <hr>
+
                             <table id="active-datatable" class="table table-bordered table-striped" width="100%" style="font-size: 14px">
                                 <thead>
                                     <tr>
@@ -43,7 +68,31 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ( $penjadwalan->result_array() AS $row ) : ?>
+                                    <?php 
+                                    
+                                    
+                                    $dataBaru = array();
+
+                                    if ( $penjadwalan->num_rows() > 0 ) {
+
+                                        foreach ( $penjadwalan->result_array() AS $row ) {
+
+
+                                            if ( $filter == $row['status'] ) { 
+
+                                                array_push( $dataBaru, $row );
+
+                                            } else if ( $filter == "all" || empty( $filter ) ) { // tidak melakukan filter
+
+                                                array_push( $dataBaru, $row );
+                                            }
+                                        }
+                                    }
+                                    
+                                    
+                                    
+                                    if ( count( $dataBaru ) > 0 ) {  
+                                    foreach ( $dataBaru AS $row ) : ?>
                                     <tr>
 
                                         <td>
@@ -123,7 +172,7 @@
 
                                         </td>
                                     </tr>
-                                    <?php endforeach; ?>
+                                    <?php endforeach; }  ?>
                                 </tbody>
                             </table>
                         </div>

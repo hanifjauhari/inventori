@@ -21,15 +21,27 @@ class M_stockopname  extends CI_Model
         return $hasil;
     }
 
-    function getStockOpnameById_stockopname($id_profile)
+    function getStockOpnameById_stockopname($id_opname)
     {
+        $query = "SELECT opname.*, profile.* FROM `opname` JOIN profile ON profile.id_profile = opname.id_profile 
+                  WHERE id_opname = '$id_opname'";
 
-
-
-        $query = "SELECT * FROM `opname` WHERE id_profile = '$id_profile'";
         $hasil = $this->db->query($query);
-
         return $hasil;
+    }
+
+
+
+    function getStockOpnameDetailBarangBy_id_stockopname( $id_opname ) {
+
+        $query = "SELECT opname_detail.*, barang.* FROM opname_detail
+                  JOIN barang ON barang.id_barang = opname_detail.id_barang 
+                  
+                  WHERE opname_detail.id_opname = '$id_opname'";
+
+        $hasil = $this->db->query($query);
+        return $hasil;
+        
     }
 
 

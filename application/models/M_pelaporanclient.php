@@ -71,7 +71,8 @@ class M_pelaporanclient extends CI_Model
         // sebut kolom dan nilai
         $nilaiTabelPelaporan = array(
 
-            'keterangan'  => $this->input->post('keterangan'),
+            'pelaporan'  => $this->input->post('pelaporan'),
+            'keterangan' => $this->input->post('keterangan'),
             'tanggal'  => $this->input->post('tanggal'),
             'foto'  => $foto,
             'status'  => $this->input->post('status')
@@ -159,14 +160,16 @@ class M_pelaporanclient extends CI_Model
         if ($foto == NULL) {
             $nilaiTabelPelaporan = array(
 
-                'keterangan'  => $this->input->post('keterangan'),
+                'pelaporan'  => $this->input->post('pelaporan'),
+                'keterangan' => $this->input->post('keterangan'),
                 'tanggal'  => $this->input->post('tanggal'),
-                'foto'  => $this->input->post('foto_sebelumnya'),
+                'foto'  => $foto,
                 'status'  => $this->input->post('status')
             );
         } else {
             $nilaiTabelPelaporan = array(
-                'keterangan'  => $this->input->post('keterangan'),
+                'pelaporan'  => $this->input->post('pelaporan'),
+                'keterangan' => $this->input->post('keterangan'),
                 'tanggal'  => $this->input->post('tanggal'),
                 'foto'  => $foto,
                 'status'  => $this->input->post('status')

@@ -16,15 +16,8 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Tambah Stock Opname</h1>
-                    <p>Deskripsi menu . . . .</p>
+                    <p></p>
 
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?php echo base_url('C_dashboard/index') ?>">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="<?php echo base_url('C_stockopname/index') ?>">Halaman Utama Stok Opname</a></li>
-                        <li class="breadcrumb-item active">Tambah Laporan Opname</li>
-                    </ol>
                 </div>
             </div>
         </div><!-- /.container-fluid -->

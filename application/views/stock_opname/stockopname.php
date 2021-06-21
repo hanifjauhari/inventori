@@ -8,19 +8,12 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>STOCKOPNAME</h1>
-                    <p>Deskripsi Menu . . . .</p>
+                    <p></p>
 
                     <a href="<?php echo site_url('C_stockopname/tambah_bagian1') ?>" class="btn btn-primary">Tambah StokOpname</a>
                     <a href="<?php //echo site_url('C_stockopname/tambah_bagian1') ?>" class="btn btn-danger">Cetak PDF</a>
                     
 
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                        <li class="breadcrumb-item active">Fixed Navbar Layout</li>
-                    </ol>
                 </div>
             </div>
         </div><!-- /.container-fluid -->

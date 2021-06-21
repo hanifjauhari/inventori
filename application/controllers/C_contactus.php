@@ -15,21 +15,21 @@ class C_contactus extends CI_Controller
         $this->load->model('M_contactus');
     }
 
-    
+
 
 
     public function index()
     {
         $data = array('title' => 'Halaman Utama');
 
-        $this->load->view('dashboarduser/headerdashboarduser', $data);
-        $this->load->view('halamanutama/contactus');
-        $this->load->view('dashboarduser/footerdashboarduser', $data);
+
+        $this->load->view('dashboarduser/V_dashboarduser2',$data);
     }
+    function prosestambah()
+    {
 
-    
-
-
+        $this->M_contactus->insertContactus();
+    }
 }
     
     /* End of file Login.php */

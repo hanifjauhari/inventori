@@ -34,16 +34,33 @@ class M_login extends CI_Model
                 $this->session->set_userdata('sess_username', $kolom['username']);
                 $this->session->set_userdata('sess_level', $kolom['level']);
 
+
+                $img = "https://img.freepik.com/free-vector/male-call-center-agent_1270-395.jpg?size=338&ext=jpg";
+                $this->session->set_userdata('sess_foto', $img);
+
                 // end pembuatan session
                 if ($kolom['level'] == "superadmin") {
 
                     redirect('C_dashboard/index');
                 } else if ($kolom['level'] == "admin") {
 
-                    redirect('C_datapegawai');
+                    if ( $kolom['foto'] ) {
+
+                        $img = base_url('assets/dist/img/pegawai/'. $kolom['foto']);
+                        $this->session->set_userdata('sess_foto', $img);
+                    }
+
+                    redirect('C_dashboard');
+
                 } else if ($kolom['level'] == "client") {
 
-                    redirect('C_pelaporanclient');
+                    if ( $kolom['foto'] ) {
+
+                        $img = base_url('assets/dist/img/pegawai/'. $kolom['foto']);
+                        $this->session->set_userdata('sess_foto', $img);
+                    }
+
+                    redirect('controlerloginuser/C_dashboardutama');
                 }
 
                 // password == 123 | password salah
@@ -63,7 +80,7 @@ class M_login extends CI_Model
             }
         } else {
 
-
+            
             // @TODO 8 : Username tidak cocok maka selesai
             $this->session->set_flashdata('pesan', "Akun tidak terdaftar");
             redirect('login/index');

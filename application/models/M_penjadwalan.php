@@ -30,6 +30,21 @@
             }
 
 
+            function getAllJadwal() {
+                
+                $this->db->select('penjadwalan_infoclient.*, penjadwalan_detailclient.*, customer.*, penjadwalan_info.*, profile.*')->from('penjadwalan_detailclient');
+                
+                $this->db->join('penjadwalan_infoclient', 'penjadwalan_infoclient.id_penjadwalan_infoclient = penjadwalan_detailclient.id_penjadwalan_infoclient', 'LEFT');
+                $this->db->join('customer', 'customer.id_customer = penjadwalan_infoclient.id_customer');
+                $this->db->join('penjadwalan_info', 'penjadwalan_info.id_penjadwalaninfo = penjadwalan_infoclient.id_penjadwalaninfo');
+                $this->db->join('profile', 'profile.id_profile = penjadwalan_detailclient.id_profile', 'LEFT');
+
+
+                $getJadwalBerdasarkanPegawai = $this->db->get();
+                return $getJadwalBerdasarkanPegawai;
+            }
+
+
 
             // verifikasi tugas
             function verifikasiTugas( $id_penjadwalan_infoclient ) {

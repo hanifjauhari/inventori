@@ -51,13 +51,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="container">
             <div class="row">
 
-                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="col-sm-9 col-md-7 col-lg-10 mx-auto">
                     <?php echo $this->session->flashdata('pesan') ?>
                     <div class="card card-signin my-5">
                         <div class="card-body">
                             <div class="container py-xl-4 py-lg-2">
                                 <!-- tittle heading -->
-                                <h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+                                <h3 class="tittle-w3l text-center">
                                     <span>F</span>orm
                                     <span>R</span>egister
                                 </h3>
@@ -70,20 +70,47 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <!-- form -->
                             <form action="<?php echo site_url('C_registrasi/prosestambah') ?>" method="post">
                                 <div class="contact-grids1 w3agile-6">
+
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 contact-form1 form-group">
+                                            <label class="col-form-label">Nama Lengkap</label>
+                                            <input type="teks" class="form-control" name="full_name" placeholder="masukkan nama lengkap" required>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 contact-form1 form-group">
+                                            <label class="col-form-label">Email</label>
+                                            <input type="teks" class="form-control" name="email" placeholder="masukkan email" required>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-8 col-sm-8 contact-form1 form-group">
+                                            <label class="col-form-label">Alamat</label>
+                                            <textarea name="alamat" class="form-control" placeholder="Masukkan alamat . . ." id=""></textarea>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 contact-form1 form-group">
+                                            <label class="col-form-label">Telp</label>
+                                            <input type="number" class="form-control" name="telp" placeholder="masukkan telp" required>
+                                        </div>
+                                    </div>
+
+
+
+
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 contact-form1 form-group">
                                             <label class="col-form-label">username</label>
-                                            <input type="teks" class="form-control" name="username" placeholder="masukkan username" required style="width: 400px;">
+                                            <input type="teks" class="form-control" name="username" placeholder="masukkan username" required>
                                         </div>
-                                    </div>
-
-                                    <div class="row">
                                         <div class="col-md-6 col-sm-6 contact-form1 form-group">
                                             <label class="col-form-label">password</label>
-                                            <input type="password" class="form-control" name="password" placeholder="masukkan password" required style="width: 400px;">
+                                            <input type="password" class="form-control" name="password" placeholder="masukkan password" required>
                                         </div>
-
                                     </div>
+
+
 
                                     <div class="contact-form">
                                         <div class="row">
@@ -91,33 +118,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                 <input type="submit" value="Submit">
                                             </div>
                                         </div>
-
-
-
                                     </div>
                                 </div>
                             </form>
                             <!-- //form -->
                         </div>
                     </div>
-                    <!-- //contact -->
-
-                    <!-- footer -->
-
-                    <!-- //payment -->
                 </div>
-            </div>
             <!-- //footer fourth section (text) -->
-            </footer>
+
             <!-- //footer -->
             <!-- copyright -->
-            <div class="copy-right py-3">
-                <div class="container">
-                    <p class="text-center text-white">© 2018 Electro Store. All rights reserved | Design by
-                        <a href="http://w3layouts.com"> W3layouts.</a>
-                    </p>
-                </div>
-            </div>
+
             <!-- //copyright -->
 
             <!-- js-files -->
@@ -252,6 +264,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <script src="js/bootstrap.js"></script>
             <!-- //for bootstrap working -->
             <!-- //js-files -->
-</body>
+            </body>
 
 </html>

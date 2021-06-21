@@ -26,16 +26,33 @@ class M_registrasi   extends CI_Model
     function prosesRegistrasi()
     {
 
+
+
+
         // sebut kolom dan nilai
         $nilaiTabelRegistrasi = array(
 
             'username'          => $this->input->post('username'),
-            'password'          => $this->input->post('password')
+            'password'          => $this->input->post('password'),
+            'level'     => "client"
 
         );
 
         // query insert
         $this->db->insert('profile', $nilaiTabelRegistrasi);
+        $id_profile_terakhir = $this->db->insert_id();
+
+
+        $nilaiTabelCustomer = array(
+
+            'id_profile' => $id_profile_terakhir,
+            'nama'      => $this->input->post('full_name'),
+            'alamat'    => $this->input->post('alamat'),
+            'telp'      => $this->input->post('telp'),
+            'email'     => $this->input->post('email'),
+        );
+
+        $this->db->insert('customer', $nilaiTabelCustomer);
 
 
         // pesan 
@@ -47,6 +64,6 @@ class M_registrasi   extends CI_Model
         $this->session->set_flashdata('pesan', $htmlPesan);
 
         // kembali ke halaman utama
-        redirect('C_registrasi');
+        redirect('C_dashboarduser');
     }
 }

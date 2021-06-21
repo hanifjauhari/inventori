@@ -8,7 +8,6 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Tambah Pelanggan</h1>
-                    <p></p>
                     <a href="<?php echo site_url('C_pelanggan/tambah') ?>" class="btn btn-primary">Tambah Data Pelanggan</a>
 
                 </div>
@@ -34,7 +33,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Tabel Pelanggan</h3>
+                            <h3 class="card-title">Table Pelanggan</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
