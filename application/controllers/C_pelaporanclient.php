@@ -31,11 +31,11 @@ class C_pelaporanclient extends CI_Controller
             'pelaporanclient'  => $this->M_pelaporanclient->getDataPelaporanclient()
         );
         // Template Header
-        $this->load->view('viewloginuser/headeruser', $data);
+        $this->load->view('template_user/headeruser', $data);
         // Load halaman utama
         $this->load->view('pelaporan_client/V_pelaporanclient');
         // Template Footer
-        $this->load->view('viewloginuser/footeruser');
+        $this->load->view('template_user/footeruser');
     }
 
 
@@ -47,11 +47,11 @@ class C_pelaporanclient extends CI_Controller
             'title' => 'Halaman Data Pelaporan Client'
         );
         // Template Header
-        $this->load->view('viewloginuser/headeruser', $data);
+        $this->load->view('template_user/headeruser', $data);
         // Load halaman utama
         $this->load->view('pelaporan_client/V_pelaporanclienttambah');
         // Template Footer
-        $this->load->view('viewloginuser/footeruser');
+        $this->load->view('template_user/footeruser');
     }
 
     // fungsi untuk menampilkan edit 
@@ -66,11 +66,11 @@ class C_pelaporanclient extends CI_Controller
             'pelaporanclient'  => $this->M_pelaporanclient->getDataPelaporanById_pelaporan($id_pelaporan)
         );
         // Template Header
-        $this->load->view('viewloginuser/headeruser', $data);
+        $this->load->view('template_user/headeruser', $data);
         // Load halaman utama
         $this->load->view('pelaporan_client/V_pelaporanclientedit');
         // Template Footer
-        $this->load->view('viewloginuser/footeruser');
+        $this->load->view('template_user/footeruser');
     }
 
 

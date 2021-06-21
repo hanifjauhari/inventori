@@ -31,7 +31,7 @@
                 <div class="col-md-6 offset-3">
 
                     <form action="<?php echo site_url('C_databarang/prosestambah') ?>" method="POST" enctype="multipart/form-data">
-                        <div class="card card-body">    
+                        <div class="card card-body">
 
                             <?php echo $this->session->flashdata('pesan') ?>
 
@@ -41,14 +41,14 @@
                             <div class="form-group">
                                 <label for="">Kategori</label>
                                 <select name="id_kategori" id="" class="form-control" required="">
-                                    <?php foreach( $kategori->result_array() AS $kolom ) : ?>
-                                    
-                                    <option value="<?php echo $kolom['id_kategori'] ?>"><?php echo $kolom['jenis_barang'] ?></option>
-                                    
+                                    <?php foreach ($kategori->result_array() as $kolom) : ?>
+
+                                        <option value="<?php echo $kolom['id_kategori'] ?>"><?php echo $kolom['jenis_barang'] ?></option>
+
                                     <?php endforeach; ?>
                                 </select>
                             </div>
-                             
+
 
                             <div class="form-group">
 
@@ -107,26 +107,26 @@
 
                                 <?php
 
-                                    $prefix = "";
-                                    $nilai  = "";
-                                    $digit  = "";
-                                    $output_kode = "-";
+                                $prefix = "";
+                                $nilai  = "";
+                                $digit  = "";
+                                $output_kode = "-";
 
 
-                                    // cek apakah kode barang ada ? 
-                                    if ( $kode_barang->num_rows() > 0 ) {
+                                // cek apakah kode barang ada ? 
+                                if ($kode_barang->num_rows() > 0) {
 
-                                        $kolom = $kode_barang->row_array();
-                                        
-                                        
-                                        // isi nilai
-                                        $prefix = $kolom['prefix'];
-                                        $nilai  = $kolom['nilai'];
-                                        $digit  = $kolom['digit'];
+                                    $kolom = $kode_barang->row_array();
 
-                                        $output_kode = $prefix.''.sprintf("%0". $digit.'s', $nilai);
-                                    }
-                                    
+
+                                    // isi nilai
+                                    $prefix = $kolom['prefix'];
+                                    $nilai  = $kolom['nilai'];
+                                    $digit  = $kolom['digit'];
+
+                                    $output_kode = $prefix . '' . sprintf("%0" . $digit . 's', $nilai);
+                                }
+
 
 
                                 ?>

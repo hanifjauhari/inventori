@@ -17,11 +17,11 @@ class C_paymentclient extends CI_Controller
             'title' => 'Halaman Utama'
         );
         // Template Header
-        $this->load->view('viewloginuser/headeruser', $data);
+        $this->load->view('template_user/headeruser', $data);
 
         $this->load->view('payment_client/V_paymentclient');
 
-        $this->load->view('viewloginuser/footeruser');
+        $this->load->view('template_user/footeruser');
     }
 }
     

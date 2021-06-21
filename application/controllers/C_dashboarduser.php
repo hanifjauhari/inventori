@@ -10,18 +10,19 @@ class C_dashboarduser extends CI_Controller
     {
 
         parent::__construct();
-        if (empty($this->session->userdata('sess_id_profile'))) {
+        // if (empty($this->session->userdata('sess_id_profile'))) {
 
 
-            $this->session->set_flashdata('pesan', "harap login terlebih dahulu");
-            // arahkan 
-            
-        }
 
-
-        // cek session
+        $this->session->set_flashdata('pesan', "harap login terlebih dahulu");
+        // arahkan 
 
     }
+
+
+    // cek session
+
+
 
 
     public function index()

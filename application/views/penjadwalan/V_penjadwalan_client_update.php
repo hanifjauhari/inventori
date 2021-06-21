@@ -64,14 +64,14 @@
                             <div class="col-md-12">
 
 
-                                <form action="<?php echo base_url('C_penjadwalan/prosesclienttambah/'. $id_penjadwalaninfo) ?>" method="POST">
+                                <form action="<?php echo base_url('C_penjadwalan/prosesclientupdate/'. $id_penjadwalaninfo.'/'. $infoclient['id_penjadwalan_infoclient']) ?>" method="POST">
 
                                     <div class="row">
                                     
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="">Permasalahan</label>
-                                                <textarea name="permasalahan" class="form-control" placeholder="Permasalahan . . ." id="" required=""></textarea>
+                                                <textarea name="permasalahan" class="form-control" placeholder="Permasalahan . . ." id="" required=""><?php echo $infoclient['permasalahan'] ?></textarea>
                                                 <small>Masukkan masalah yang telah dihadapi client untuk disampaikan ke pegawai</small>
                                             </div>    
                                         </div>
@@ -83,16 +83,27 @@
                                                 <label for="">Alat</label> 
                                                 <select name="alat[]" multiple="multiple" class="form-control select2bs4" style="width: 100%;">
                                                     <?php foreach ( $alat->result_array() AS $alt ) :
-                                                        
+
                                                         $disabled = "";
                                                         $text_alt = $alt['kode_alat'];
-                                                        if ( $alt['qty'] == 0 ) {
 
-                                                            $disabled = "disabled";
-                                                            $text_alt = "Kosong";
+                                                        $select = "";
+                                                        foreach ( $infoalat->result_array() AS $alt_info ) {
+
+                                                            if ( $alt_info['id_alat'] == $alt['id_alat'] ) {
+
+                                                                $select = 'selected="selected"';
+                                                            } else {
+
+                                                                if ( $alt['qty'] == 0 ) {
+
+                                                                    $disabled = "disabled";
+                                                                    $text_alt = "Kosong";
+                                                                }
+                                                            } 
                                                         }
                                                     ?>
-                                                    <option value="<?php echo $alt['id_alat'] ?>" <?php echo $disabled ?>><?php echo $text_alt.' | '.$alt['nama_alat'] ?></option>
+                                                    <option value="<?php echo $alt['id_alat'] ?>" <?php echo $select.' '.$disabled ?>><?php echo $text_alt.' | '.$alt['nama_alat'] ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                                 <small>Masukkan alat / kebutuhan</small>
@@ -101,7 +112,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Keterangan Tambahan</label>
-                                                <input type="text" name="keterangan_tambah" class="form-control" placeholder="Membeli ekstensi lain atau bahan . . ." />
+                                                <input type="text" name="keterangan_tambah" class="form-control" placeholder="Membeli ekstensi lain atau bahan . . ." value="<?php echo $infoclient['keterangan_tambahan'] ?>" />
                                                 <small>Masukkan keterangan tambahan</small>
                                             </div>
                                         </div>
@@ -122,7 +133,7 @@
                                             <select name="client" class="form-control select2bs4" style="width: 100%;" required="">
                                                 <option value="">-- Pilih salah satu --</option>
                                                 <?php foreach ( $customer->result_array() AS $row ) : ?>
-                                                <option value="<?php echo $row['id_customer'] ?>"><?php echo $row['nama'].' | '. $row['email'] ?></option>
+                                                <option value="<?php echo $row['id_customer'] ?>" <?php if ( $infoclient['id_customer'] == $row['id_customer'] ) { echo 'selected="selected"'; } ?>><?php echo $row['nama'].' | '. $row['email'] ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                             </div>
@@ -141,16 +152,24 @@
                                                 <select class="duallistbox" multiple="multiple" name="pegawai[]" required="">
                                                     <?php foreach ( $pegawai->result_array() as $pegawai ) {
                                                         
-                                                        
                                                         $disabled_pg = "";
                                                         $add_text = "";
-                                                        if ( $pegawai['pemetaan'] >= 3 ) {
+                                                        $select = "";
 
-                                                            $disabled_pg = "disabled";
-                                                            $add_text = "(Penuh)";
+                                                        foreach ( $infopegawai->result_array() AS $info_pegawai ) {
+
+                                                            if ( $info_pegawai['id_profile'] == $pegawai['id_profile'] ) {
+
+                                                                $select = 'selected="selected"';
+
+                                                            } else if ( $pegawai['pemetaan'] >= 3 ) {
+
+                                                                $disabled_pg = "disabled";
+                                                                $add_text = "(Penuh)";
+                                                            }
                                                         }
                                                     ?>
-                                                    <option value="<?php echo $pegawai['id_profile'] ?>" <?php echo $disabled_pg ?>><?php echo $pegawai['nama_pegawai'].' '.$add_text ?></option>
+                                                    <option value="<?php echo $pegawai['id_profile'] ?>" <?php echo $select.' '.$disabled_pg ?>><?php echo $pegawai['nama_pegawai'].' '.$add_text ?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -163,7 +182,7 @@
                                     <div class="row">
                                         <div class="form-group">
                                             <button type="reset" class="btn btn-secondary">Reset</button>
-                                            <button type="submit" class="btn btn-primary">Tambahkan dan Simpan</button>
+                                            <button type="submit" class="btn btn-warning">Simpan dan Perbarui</button>
                                         </div>
                                     </div>
                                     
